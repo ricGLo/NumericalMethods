@@ -58,22 +58,3 @@ def Nelder_Mead(S, f, N, tau = 0.0000001, mu_r = -1, mu_e = -2, mu_oc = -0.5, mu
         x = np.array([x_aux[idx] for idx in s_idx])
 
     return x, k
-
-
-def Rosenbrock(x):
-    return (100*(x[1]-x[0]**2)**2 + (1-x[0])**2)
-
-def func(x):
-    return (x[0]**2 + x[1]**2)/4
-
-x1 = np.array([4, 6])
-x2 = np.array([-5, 0])
-x3 = np.array([3, -3])
-S = np.array([x1, x2, x3])
-
-sol = Nelder_Mead(S, func, 100000)
-
-print(sol[0], sol[1])
-print(func(sol[0][0]))
-print(func(sol[0][1]))
-print(func(sol[0][2]))
